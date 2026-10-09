@@ -59,7 +59,7 @@ Boxplots are useful because they show:
 - Median market value
 - Middle 50% of player values
 - Overall spread
-- Differences in the distribution of values between positions
+Differences in the distribution of values between positions
 Separate boxplots were created for Bronze, Silver, and Gold forwards.
 Bronze Players
 Bronze forwards show relatively similar market value distributions across the different positions.
@@ -76,6 +76,7 @@ Strikers and left wings are somewhat more concentrated.
 This suggests that the importance of specific forward positions may become more noticeable among higher-rated players.
 
 Age vs. Market Value
+
 The second part of the analysis uses scatterplots to explore the relationship between player age and market value.
 Each point represents one individual forward player.
 Separate scatterplots were created for Bronze, Silver, and Gold players.
