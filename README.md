@@ -59,16 +59,20 @@ Boxplots are useful because they show:
 - Median market value
 - Middle 50% of player values
 - Overall spread
-Differences in the distribution of values between positions
+- Differences in the distribution of values between positions
+  
 Separate boxplots were created for Bronze, Silver, and Gold forwards.
+
 Bronze Players
 Bronze forwards show relatively similar market value distributions across the different positions.
 The median values for striker, left wing, right wing, and center forward are fairly close to one another.
 This suggests that among lower-rated players, the specific forward position does not create a major difference in market value.
+
 Silver Players
 The Silver tier begins to show more variation between positions.
 Right wings have a somewhat higher median market value and a wider range of values compared with several other forward positions.
 However, the distributions are still relatively similar compared with the Gold tier.
+
 Gold Players
 The Gold tier shows the largest differences between forward positions.
 Center forwards and right wings show particularly wide distributions and higher upper ranges of market value.
@@ -80,16 +84,19 @@ Age vs. Market Value
 The second part of the analysis uses scatterplots to explore the relationship between player age and market value.
 Each point represents one individual forward player.
 Separate scatterplots were created for Bronze, Silver, and Gold players.
+
 Bronze Players
 Bronze players appear to reach their highest market values relatively early.
 The highest-valued Bronze players are mostly concentrated in their late teens and early twenties.
 After the mid-twenties, the upper range of market value begins to decline.
 This suggests that younger Bronze players may receive additional market value because of their future development potential.
+
 Silver Players
 Silver players show a similar relationship.
 Many of the highest-valued Silver players are between approximately 18 and 24 years old.
 As players move into their late twenties and thirties, market values generally become lower.
 The pattern suggests that age plays an important role in the valuation of mid-level players.
+
 Gold Players
 Gold players show a wider range of ages and market values.
 Their highest values are generally concentrated throughout their twenties, but elite players can maintain high market values for longer than Bronze or Silver players.
