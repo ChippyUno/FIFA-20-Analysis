@@ -53,7 +53,7 @@ For this project, the main variables used are:
 ---
 
 ## Analysis
-Market Value by Forward Position
+### Market Value by Forward Position
 The first part of the analysis uses boxplots to compare market value distributions across forward positions within each player tier.
 Boxplots are useful because they show:
 - Median market value
@@ -79,7 +79,7 @@ Center forwards and right wings show particularly wide distributions and higher 
 Strikers and left wings are somewhat more concentrated.
 This suggests that the importance of specific forward positions may become more noticeable among higher-rated players.
 
-Age vs. Market Value
+### Age vs. Market Value
 
 The second part of the analysis uses scatterplots to explore the relationship between player age and market value.
 Each point represents one individual forward player.
