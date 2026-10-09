@@ -1,0 +1,88 @@
+---
+title: "Final Presentation"
+author: "James Chen"
+format:
+  html:
+    toc: true
+    toc-location: left
+    theme: vapor
+    highlight-style: breeze
+    self-contained: true
+---
+
+```{python}
+
+# Load dataset and initial packages
+import pandas as pd 
+import seaborn as sns
+import matplotlib.pyplot as plt
+fifa = pd.read_csv('/Users/jameschen/Downloads/FIFA20.csv')
+
+# Remove players with 0 value
+fifa = fifa[fifa["value_eur"] > 0]
+
+# Use value in millions
+fifa["value_millions"] = fifa["value_eur"] / 1_000_000
+
+# Select the player's primary position
+fifa["primary_position"] = fifa["player_positions"].str.split(",").str[0].str.strip()
+
+def position_group(pos):
+    if pos in ["ST", "CF", "LW", "RW", "LF", "RF"]:
+        return "Forward"
+    else:
+        return "Other"
+        
+# Only focus on Forwards
+fifa["position_group"] = fifa["primary_position"].apply(position_group)
+
+# New dataframe        
+forwards = fifa[fifa["position_group"] == "Forward"].copy()
+
+# Create bronze, silver, gold groups based on overall rating
+def forward_tier(overall):
+    if overall <= 64:
+        return "Bronze"
+    elif 65 <= overall <= 74:
+        return "Silver"
+    else:
+        return "Gold"
+
+forwards["tier"] = forwards["overall"].apply(forward_tier)
+
+# Boxplot to compare the market value of positions within the forward group for all three tiers
+sns.set_theme(style="whitegrid")
+for tier in ["Bronze", "Silver", "Gold"]:
+    plt.figure(figsize=(8, 5))
+    sns.boxplot(
+        data=forwards[forwards["tier"] == tier],
+        x="primary_position",
+        y="value_millions",
+        showfliers=False
+    )
+    
+    plt.title(f"Forward Market Value by Position: {tier}", fontsize=14)
+    plt.xlabel("Forward Position", fontsize=11)
+    plt.ylabel("Market Value (€ Millions)", fontsize=11)
+    plt.grid(axis="y", alpha=0.3)
+    plt.tight_layout()
+    plt.show()
+
+# Scatterplot to see age vs market value of forwards in general for all three tiers 
+for tier in ["Bronze", "Silver", "Gold"]:
+    plt.figure(figsize=(8, 5))
+    sns.scatterplot(
+        data=forwards[forwards["tier"] == tier],
+        x="age",
+        y="value_millions",
+        alpha=0.6
+    )
+
+    plt.title(f"Age vs. Market Value: {tier} Forwards")
+    plt.xlabel("Age")
+    plt.ylabel("Market Value (€ Millions)")
+    plt.xticks(range(15, 41, 5))
+    plt.tight_layout()
+    plt.show()
+
+```
